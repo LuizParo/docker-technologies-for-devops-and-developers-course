@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: /02-dockerapp
+    working_directory: docker-technologies-for-devops-and-developers-course/02-dockerapp
     docker:
       - image: docker:17.05.0-ce-git
     steps:
@@ -15,5 +15,6 @@ jobs:
       - run:
           name: Run tests
           command: |
+            cd 02-dockerapp/
             docker-compose up -d
             docker-compose run dockerapp python test.py
