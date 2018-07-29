@@ -17,6 +17,7 @@ jobs:
           command: |
             cd 02-dockerapp/
             docker-compose up -d
+            docker ps
             docker-compose run dockerapp python test.py
       - deploy:
           name: Push application Docker image
